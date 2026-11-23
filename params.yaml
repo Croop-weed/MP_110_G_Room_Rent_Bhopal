@@ -1,0 +1,25 @@
+data:
+  train_csv: data/train.csv
+  target_column: rent_rs
+
+split:
+  validation_ratio: 0.20
+  random_seed: 42
+
+mlflow:
+  experiment_name: pg-rent-stage2-g187
+  registered_model_name: pg-rent-g187
+
+models:
+  random_forest_200:
+    n_estimators: 200
+    max_depth: 10
+    random_state: 42
+  random_forest_300:
+    n_estimators: 300
+    max_depth: 15
+    random_state: 42
+  extra_trees_300:
+    n_estimators: 300
+    max_depth: 15
+    random_state: 42

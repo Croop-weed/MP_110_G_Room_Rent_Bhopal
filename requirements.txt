@@ -1,0 +1,9 @@
+pandas==2.3.3
+numpy==2.3.5
+scikit-learn==1.7.2
+mlflow==3.6.0
+PyYAML==6.0.3
+joblib==1.5.2
+pytest==9.2.0
+ruff==0.14.6
+sqlalchemy==2.0.44

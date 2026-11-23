@@ -1,1 +1,18 @@
 .venv
+# MLflow local tracking
+mlflow.db
+mlflow.db-shm
+mlflow.db-wal
+mlruns/
+
+# Model binaries
+models/*.pkl
+models/*.joblib
+models/*.onnx
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/

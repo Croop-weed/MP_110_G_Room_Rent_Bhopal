@@ -1,0 +1,11 @@
+PG ROOM RENT - CLEANING REPORT
+Rows before: 1000
+Rows after: 1000
+Duplicate rows removed: 0
+Sector West building_age_yr rows divided by 12: 345
+Sector West building_age median before: 252.0
+Sector West building_age median after: 21.0
+sharing 999 values replaced with NaN: 60
+Target typo records corrected by /10: 12
+Furnishing variants normalized: 1000
+Verified target record IDs: R00224, R00279, R00385, R00423, R00466, R00616, R00637, R00642, R00730, R00783, R00803, R00807

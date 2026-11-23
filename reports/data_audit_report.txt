@@ -1,0 +1,417 @@
+PG ROOM RENT - DATA AUDIT REPORT
+Training rows: 1000
+Training SHA-256 source: /home/harshit/Downloads/G187_MP110/data/train.csv
+
+leaking_column: present=False
+{
+  "candidates": [],
+  "columns": [],
+  "evidence": "A candidate must be absent at inference and show strong target correlation or a single value; absence alone is not target leakage.",
+  "missing_at_inference_columns": [],
+  "present": false,
+  "status": "not_detected"
+}
+
+unit_mixup: present=True
+{
+  "affected_rows": 345,
+  "column": "building_age_yr",
+  "confirmed": [
+    {
+      "affected_rows": 345,
+      "column": "building_age_yr",
+      "evidence": "Median ratio is near a known factor, and corrected median/max fit the other-locality range.",
+      "factor": 12.0,
+      "group_value": "Sector West",
+      "max_after": 40.0,
+      "max_before": 480.0,
+      "median_after": 21.0,
+      "median_before": 252.0,
+      "median_ratio": 13.091,
+      "plausible_factors": [
+        12.0
+      ]
+    }
+  ],
+  "factor": 12.0,
+  "group_value": "Sector West",
+  "present": true,
+  "statistics": {
+    "Market Side": {
+      "count": 471.0,
+      "max": 40.0,
+      "mean": 19.961783439490446,
+      "median": 20.0,
+      "min": 0.0
+    },
+    "Sector East": {
+      "count": 184.0,
+      "max": 40.0,
+      "mean": 19.10326086956522,
+      "median": 18.5,
+      "min": 0.0
+    },
+    "Sector West": {
+      "count": 345.0,
+      "max": 480.0,
+      "mean": 246.29565217391306,
+      "median": 252.0,
+      "min": 0.0
+    }
+  },
+  "status": "detected",
+  "suspicious_candidates": [
+    {
+      "column": "building_age_yr",
+      "group_value": "Sector West",
+      "max_before": 480.0,
+      "median_before": 252.0,
+      "median_ratio": 13.091,
+      "plausible_factors": [
+        12.0
+      ]
+    }
+  ],
+  "verification": {
+    "max_after": 40.0,
+    "max_before": 480.0,
+    "median_after": 21.0,
+    "median_before": 252.0
+  }
+}
+
+sentinel_value: present=True
+{
+  "column": "sharing",
+  "count": 60,
+  "evidence": [
+    {
+      "column": "sharing",
+      "count": 60,
+      "value": 999
+    },
+    {
+      "column": "rent_rs",
+      "count": 1,
+      "value": 9999
+    }
+  ],
+  "present": true,
+  "status": "detected",
+  "value": 999
+}
+
+duplicate_rows: present=False
+{
+  "count": 0,
+  "evidence": {
+    "duplicate_mask_rows": 0
+  },
+  "present": false,
+  "status": "not_detected"
+}
+
+stuck_sensor: present=False
+{
+  "column": null,
+  "confirmed_runs": [],
+  "end_date": null,
+  "evidence": "Repeated values were inspected, but were not on enough continuous dates to confirm a sensor fault.",
+  "present": false,
+  "start_date": null,
+  "status": "inconclusive",
+  "suspicious_runs": [
+    {
+      "column": "meals_per_day",
+      "date_span_days": 2,
+      "distinct_dates": 3,
+      "end_date": "2026-06-07",
+      "length": 8,
+      "start_date": "2026-06-05",
+      "value": 2
+    },
+    {
+      "column": "meals_per_day",
+      "date_span_days": 2,
+      "distinct_dates": 3,
+      "end_date": "2026-01-05",
+      "length": 7,
+      "start_date": "2026-01-03",
+      "value": 1
+    }
+  ],
+  "value": null
+}
+
+target_typos: present=True
+{
+  "anomalies": [
+    {
+      "corrected_value": 8868,
+      "evidence": {
+        "corrected_within_iqr_normal_range": true,
+        "iqr_upper_bound": 28818.0,
+        "multiplication_ratio": 10.0,
+        "normal_p05_p95": [
+          8923.7,
+          24587.15
+        ],
+        "original_above_iqr_upper_bound": true
+      },
+      "original_value": 88680,
+      "record_id": "R00224"
+    },
+    {
+      "corrected_value": 14215,
+      "evidence": {
+        "corrected_within_iqr_normal_range": true,
+        "iqr_upper_bound": 28818.0,
+        "multiplication_ratio": 10.0,
+        "normal_p05_p95": [
+          8923.7,
+          24587.15
+        ],
+        "original_above_iqr_upper_bound": true
+      },
+      "original_value": 142150,
+      "record_id": "R00279"
+    },
+    {
+      "corrected_value": 15173,
+      "evidence": {
+        "corrected_within_iqr_normal_range": true,
+        "iqr_upper_bound": 28818.0,
+        "multiplication_ratio": 10.0,
+        "normal_p05_p95": [
+          8923.7,
+          24587.15
+        ],
+        "original_above_iqr_upper_bound": true
+      },
+      "original_value": 151730,
+      "record_id": "R00385"
+    },
+    {
+      "corrected_value": 6800,
+      "evidence": {
+        "corrected_within_iqr_normal_range": true,
+        "iqr_upper_bound": 28818.0,
+        "multiplication_ratio": 10.0,
+        "normal_p05_p95": [
+          8923.7,
+          24587.15
+        ],
+        "original_above_iqr_upper_bound": true
+      },
+      "original_value": 68000,
+      "record_id": "R00423"
+    },
+    {
+      "corrected_value": 9529,
+      "evidence": {
+        "corrected_within_iqr_normal_range": true,
+        "iqr_upper_bound": 28818.0,
+        "multiplication_ratio": 10.0,
+        "normal_p05_p95": [
+          8923.7,
+          24587.15
+        ],
+        "original_above_iqr_upper_bound": true
+      },
+      "original_value": 95290,
+      "record_id": "R00466"
+    },
+    {
+      "corrected_value": 7510,
+      "evidence": {
+        "corrected_within_iqr_normal_range": true,
+        "iqr_upper_bound": 28818.0,
+        "multiplication_ratio": 10.0,
+        "normal_p05_p95": [
+          8923.7,
+          24587.15
+        ],
+        "original_above_iqr_upper_bound": true
+      },
+      "original_value": 75100,
+      "record_id": "R00616"
+    },
+    {
+      "corrected_value": 23072,
+      "evidence": {
+        "corrected_within_iqr_normal_range": true,
+        "iqr_upper_bound": 28818.0,
+        "multiplication_ratio": 10.0,
+        "normal_p05_p95": [
+          8923.7,
+          24587.15
+        ],
+        "original_above_iqr_upper_bound": true
+      },
+      "original_value": 230720,
+      "record_id": "R00637"
+    },
+    {
+      "corrected_value": 14410,
+      "evidence": {
+        "corrected_within_iqr_normal_range": true,
+        "iqr_upper_bound": 28818.0,
+        "multiplication_ratio": 10.0,
+        "normal_p05_p95": [
+          8923.7,
+          24587.15
+        ],
+        "original_above_iqr_upper_bound": true
+      },
+      "original_value": 144100,
+      "record_id": "R00642"
+    },
+    {
+      "corrected_value": 15595,
+      "evidence": {
+        "corrected_within_iqr_normal_range": true,
+        "iqr_upper_bound": 28818.0,
+        "multiplication_ratio": 10.0,
+        "normal_p05_p95": [
+          8923.7,
+          24587.15
+        ],
+        "original_above_iqr_upper_bound": true
+      },
+      "original_value": 155950,
+      "record_id": "R00730"
+    },
+    {
+      "corrected_value": 20397,
+      "evidence": {
+        "corrected_within_iqr_normal_range": true,
+        "iqr_upper_bound": 28818.0,
+        "multiplication_ratio": 10.0,
+        "normal_p05_p95": [
+          8923.7,
+          24587.15
+        ],
+        "original_above_iqr_upper_bound": true
+      },
+      "original_value": 203970,
+      "record_id": "R00783"
+    },
+    {
+      "corrected_value": 10495,
+      "evidence": {
+        "corrected_within_iqr_normal_range": true,
+        "iqr_upper_bound": 28818.0,
+        "multiplication_ratio": 10.0,
+        "normal_p05_p95": [
+          8923.7,
+          24587.15
+        ],
+        "original_above_iqr_upper_bound": true
+      },
+      "original_value": 104950,
+      "record_id": "R00803"
+    },
+    {
+      "corrected_value": 23472,
+      "evidence": {
+        "corrected_within_iqr_normal_range": true,
+        "iqr_upper_bound": 28818.0,
+        "multiplication_ratio": 10.0,
+        "normal_p05_p95": [
+          8923.7,
+          24587.15
+        ],
+        "original_above_iqr_upper_bound": true
+      },
+      "original_value": 234720,
+      "record_id": "R00807"
+    }
+  ],
+  "candidate_count": 12,
+  "count": 12,
+  "normal_statistics": {
+    "iqr_upper_bound": 28818.0,
+    "median": 15790.5,
+    "p05": 8923.7,
+    "p95": 24587.15,
+    "q1": 12793.0,
+    "q3": 19203.0
+  },
+  "present": true,
+  "status": "detected"
+}
+
+spelling_variants: present=True
+{
+  "column": "furnishing",
+  "evidence": [
+    {
+      "clean_later_levels": 3,
+      "clean_values": [
+        "full",
+        "semi",
+        "unfurnished"
+      ],
+      "column": "furnishing",
+      "normalized_levels": 3,
+      "normalized_values": [
+        "full",
+        "semi",
+        "unfurnished"
+      ],
+      "raw_levels": 18,
+      "raw_values": [
+        " full",
+        " semi",
+        " unfurnished",
+        "FULL",
+        "Full",
+        "SEMI",
+        "Semi",
+        "UNFURNISHED",
+        "Unfurnished",
+        "ful.",
+        "full",
+        "full ",
+        "sem.",
+        "semi",
+        "semi ",
+        "unf.",
+        "unfurnished",
+        "unfurnished "
+      ],
+      "unmatched_normalized_values": [],
+      "variant_types": {
+        "abbreviation": [
+          "ful.",
+          "sem.",
+          "unf."
+        ],
+        "case": [
+          "FULL",
+          "Full",
+          "SEMI",
+          "Semi",
+          "UNFURNISHED",
+          "Unfurnished"
+        ],
+        "punctuation": [
+          "ful.",
+          "sem.",
+          "unf."
+        ],
+        "whitespace": [
+          " full",
+          " semi",
+          " unfurnished",
+          "full ",
+          "semi ",
+          "unfurnished "
+        ]
+      }
+    }
+  ],
+  "present": true,
+  "status": "detected",
+  "true_levels": 3
+}
