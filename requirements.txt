@@ -7,3 +7,6 @@ joblib==1.5.2
 pytest==9.2.0
 ruff==0.14.6
 sqlalchemy==2.0.44
+fastapi==0.165.0
+uvicorn==0.54.0
+httpx==0.28.1

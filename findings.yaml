@@ -33,21 +33,21 @@ tracking:
   experiment_name: pg-rent-stage2-g187
   best_run_id: e3f7788253ec4d2ebccea836d99e7385
   registered_model_name: pg-rent-g187
-  champion_version: 1
+  champion_version: 2
 monitoring:
   psi:
-    distance_to_campus_km: null
-    room_area_sqft: null
-    sharing: null
-    meals_per_day: null
-    building_age_yr: null
-    wifi_mbps: null
-  most_drifted_feature: null
+    room_area_sqft: 4.905400037741854
+    building_age_yr: 0.6888944663234418
+    distance_to_campus_km: 0.035543497010151456
+    wifi_mbps: 0.03456865894425167
+    sharing: 0.009221964013080607
+    meals_per_day: 0.0028359175255246736
+  most_drifted_feature: room_area_sqft
   mae_by_group:
-    Sector East: null
-    Sector West: null
-    Market Side: null
-  worst_served_group: null
-  mae_v1_on_check: null
-  mae_v2_on_check: null
-  decision: null
+    Market Side: 8764.871490777428
+    Sector East: 3538.9297232545837
+    Sector West: 3474.107039226497
+  worst_served_group: Market Side
+  mae_v1_on_check: 5191.818859033713
+  mae_v2_on_check: 2074.66944284562
+  decision: promote

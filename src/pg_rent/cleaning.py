@@ -36,8 +36,11 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
 
     if {"locality", "building_age_yr"}.issubset(cleaned.columns):
         mask = cleaned["locality"] == "Sector West"
+        cleaned["building_age_yr"] = pd.to_numeric(
+            cleaned["building_age_yr"], errors="coerce"
+        ).astype("float64")
         cleaned.loc[mask, "building_age_yr"] = (
-            pd.to_numeric(cleaned.loc[mask, "building_age_yr"], errors="coerce") / 12.0
+            cleaned.loc[mask, "building_age_yr"] / 12.0
         )
 
     if "sharing" in cleaned:
